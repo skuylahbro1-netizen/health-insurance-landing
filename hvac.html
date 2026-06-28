@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HVAC Repair & AC Service | Free Diagnosis USA</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; background: #f5f5f5; color: #333; }
+
+  /* TOP BAR */
+  .topbar { background: #1a3a5c; text-align: center; padding: 10px 16px; }
+  .topbar p { color: #ffffff; font-size: 11px; font-weight: 600; letter-spacing: 1px; }
+
+  /* HERO */
+  .hero { background: linear-gradient(135deg, #1a3a5c 0%, #0d6ebd 100%); padding: 30px 20px 40px; text-align: center; }
+  .badge { background: #ff6b00; color: #ffffff; font-size: 11px; font-weight: 700; padding: 5px 14px; border-radius: 20px; display: inline-block; margin-bottom: 14px; letter-spacing: 0.5px; }
+  .hero h1 { color: #ffffff; font-size: 26px; font-weight: 700; line-height: 1.3; margin-bottom: 10px; }
+  .hero h1 span { color: #ffd700; }
+  .hero p { color: #b8d4f0; font-size: 14px; line-height: 1.6; margin-bottom: 22px; }
+  .hero-hours { color: #b8d4f0; font-size: 12px; margin-top: 10px; }
+
+  /* PULSE BUTTON */
+  .btn-cta { display: block; background: #ff6b00; color: #ffffff; text-decoration: none; font-size: 18px; font-weight: 700; padding: 18px 24px; border-radius: 8px; margin-bottom: 10px; text-align: center; animation: pulse 2s infinite; }
+  .btn-cta:hover { background: #e05a00; }
+  @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(255,107,0,0.7); } 70% { box-shadow: 0 0 0 12px rgba(255,107,0,0); } 100% { box-shadow: 0 0 0 0 rgba(255,107,0,0); } }
+
+  .btn-blue { display: block; background: #0d6ebd; color: #ffffff; text-decoration: none; font-size: 18px; font-weight: 700; padding: 18px 24px; border-radius: 8px; margin-bottom: 10px; text-align: center; }
+  .btn-blue:hover { background: #0a5a9e; }
+  .btn-sub { font-size: 12px; color: #888; text-align: center; margin-top: 8px; }
+
+  /* TRUST BADGES */
+  .trust { background: #ffffff; padding: 16px 20px; border-bottom: 1px solid #e0e0e0; }
+  .trust-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; text-align: center; }
+  .trust-item { padding: 10px 4px; }
+  .trust-item .icon { font-size: 20px; margin-bottom: 4px; }
+  .trust-item .label { font-size: 10px; font-weight: 700; color: #1a3a5c; line-height: 1.3; }
+
+  /* BENEFITS */
+  .benefits { background: #eef4fb; padding: 24px 20px; border-bottom: 1px solid #c8ddf5; }
+  .section-label { font-size: 11px; font-weight: 700; color: #1a3a5c; text-align: center; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 16px; }
+  .benefit-item { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 14px; }
+  .check-circle { width: 26px; height: 26px; background: #0d6ebd; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: white; font-size: 14px; font-weight: 700; }
+  .benefit-text h3 { font-size: 14px; font-weight: 700; color: #1a3a5c; margin-bottom: 2px; }
+  .benefit-text p { font-size: 12px; color: #4a6a8a; line-height: 1.5; }
+
+  /* SERVICES */
+  .services { background: #ffffff; padding: 24px 20px; }
+  .services h2 { font-size: 15px; font-weight: 700; text-align: center; margin-bottom: 14px; color: #1a3a5c; }
+  .grid-2x2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 18px; }
+  .grid-box { background: #eef4fb; border: 1px solid #c8ddf5; border-radius: 8px; padding: 12px; text-align: center; }
+  .grid-box .icon { font-size: 22px; margin-bottom: 4px; }
+  .grid-box .label { font-size: 12px; font-weight: 700; color: #1a3a5c; }
+  .grid-box .sub { font-size: 11px; color: #4a6a8a; margin-top: 2px; }
+
+  /* URGENT BANNER */
+  .urgent { background: #ff6b00; padding: 16px 20px; text-align: center; }
+  .urgent h2 { color: #ffffff; font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+  .urgent p { color: #ffe0c8; font-size: 12px; margin-bottom: 12px; }
+
+  /* HOW IT WORKS */
+  .howitworks { background: #eef4fb; padding: 24px 20px; }
+  .howitworks h2 { font-size: 15px; font-weight: 700; margin-bottom: 14px; color: #1a3a5c; text-align: center; }
+  .step-item { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 14px; }
+  .step-num { width: 30px; height: 30px; background: #0d6ebd; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: white; font-size: 14px; font-weight: 700; }
+  .step-text h3 { font-size: 14px; font-weight: 700; color: #1a3a5c; margin-bottom: 2px; }
+  .step-text p { font-size: 12px; color: #4a6a8a; line-height: 1.4; }
+
+  /* TESTIMONIALS */
+  .testimonials { background: #ffffff; padding: 24px 20px; }
+  .testimonials h2 { font-size: 15px; font-weight: 700; margin-bottom: 14px; color: #1a3a5c; }
+  .testi-card { background: #eef4fb; border: 1px solid #c8ddf5; border-radius: 8px; padding: 12px 14px; margin-bottom: 10px; }
+  .testi-card .stars { color: #ffd700; font-size: 13px; margin-bottom: 4px; }
+  .testi-card p { font-size: 13px; color: #444; line-height: 1.5; margin-bottom: 6px; font-style: italic; }
+  .testi-card span { font-size: 11px; color: #888; }
+
+  /* FAQ */
+  .faq { background: #eef4fb; padding: 24px 20px; }
+  .faq h2 { font-size: 15px; font-weight: 700; margin-bottom: 14px; color: #1a3a5c; text-align: center; }
+  .faq-item { background: #ffffff; border: 1px solid #c8ddf5; border-radius: 8px; padding: 12px 14px; margin-bottom: 8px; }
+  .faq-item h3 { font-size: 13px; font-weight: 700; color: #1a3a5c; margin-bottom: 4px; }
+  .faq-item p { font-size: 12px; color: #4a6a8a; line-height: 1.5; }
+
+  /* FINAL CTA */
+  .final-cta { background: #1a3a5c; padding: 24px 20px; text-align: center; }
+  .final-cta h2 { color: #ffffff; font-size: 18px; font-weight: 700; margin-bottom: 6px; }
+  .final-cta p { color: #b8d4f0; font-size: 13px; margin-bottom: 16px; }
+  .final-cta .hours { color: #b8d4f0; font-size: 11px; margin-top: 8px; }
+
+  /* STICKY BUTTON */
+  .sticky-btn { position: fixed; bottom: 0; left: 0; right: 0; background: #ff6b00; padding: 14px 20px; text-align: center; z-index: 999; box-shadow: 0 -2px 10px rgba(0,0,0,0.2); }
+  .sticky-btn a { color: #ffffff; text-decoration: none; font-size: 16px; font-weight: 700; }
+
+  /* DISCLAIMER */
+  .disclaimer { background: #f0f0f0; padding: 16px 20px 70px; border-top: 1px solid #ddd; }
+  .disclaimer p { font-size: 10px; color: #888; line-height: 1.7; text-align: center; }
+  .disclaimer strong { color: #666; }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <p>🌡️ SUMMER EMERGENCY HVAC SERVICE — AVAILABLE 24/7 NATIONWIDE</p>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="badge">⚡ SAME DAY SERVICE AVAILABLE</div>
+  <h1>AC Broken? Get <span>FREE Diagnosis</span><br>From a Local HVAC Expert</h1>
+  <p>Don't suffer in the heat — our network of licensed HVAC technicians is ready to help you today</p>
+  <a href="tel:1-800-XXX-XXXX" class="btn-cta">📞 Call Now: 1-800-XXX-XXXX</a>
+  <p class="hero-hours">🕐 Live agents available 24/7 — including weekends</p>
+</div>
+
+<!-- TRUST BADGES -->
+<div class="trust">
+  <div class="trust-grid">
+    <div class="trust-item">
+      <div class="icon">🛡️</div>
+      <div class="label">Licensed & Insured</div>
+    </div>
+    <div class="trust-item">
+      <div class="icon">⚡</div>
+      <div class="label">Same Day Service</div>
+    </div>
+    <div class="trust-item">
+      <div class="icon">🌙</div>
+      <div class="label">24/7 Emergency</div>
+    </div>
+    <div class="trust-item">
+      <div class="icon">💰</div>
+      <div class="label">Free Diagnosis</div>
+    </div>
+    <div class="trust-item">
+      <div class="icon">⭐</div>
+      <div class="label">Top Rated Techs</div>
+    </div>
+    <div class="trust-item">
+      <div class="icon">🏠</div>
+      <div class="label">All Brands Served</div>
+    </div>
+  </div>
+</div>
+
+<!-- BENEFITS -->
+<div class="benefits">
+  <p class="section-label">Why call us right now?</p>
+  <div class="benefit-item">
+    <div class="check-circle">✓</div>
+    <div class="benefit-text">
+      <h3>Free in-home diagnosis</h3>
+      <p>A licensed tech visits your home and diagnoses the problem at zero cost to you</p>
+    </div>
+  </div>
+  <div class="benefit-item">
+    <div class="check-circle">✓</div>
+    <div class="benefit-text">
+      <h3>Same day & emergency repairs</h3>
+      <p>Most repairs completed same day — we know you can't wait in the summer heat</p>
+    </div>
+  </div>
+  <div class="benefit-item">
+    <div class="check-circle">✓</div>
+    <div class="benefit-text">
+      <h3>Upfront pricing — no surprises</h3>
+      <p>You'll know the full cost before any work begins. No hidden fees, ever</p>
+    </div>
+  </div>
+  <div class="benefit-item">
+    <div class="check-circle">✓</div>
+    <div class="benefit-text">
+      <h3>All makes & models serviced</h3>
+      <p>Carrier, Trane, Lennox, Rheem, York, Goodman and more — we fix them all</p>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<div class="services">
+  <h2>What we fix & install</h2>
+  <div class="grid-2x2">
+    <div class="grid-box">
+      <div class="icon">❄️</div>
+      <div class="label">AC Repair</div>
+      <div class="sub">Fast same-day fix</div>
+    </div>
+    <div class="grid-box">
+      <div class="icon">🌡️</div>
+      <div class="label">Heating Repair</div>
+      <div class="sub">All systems</div>
+    </div>
+    <div class="grid-box">
+      <div class="icon">🔧</div>
+      <div class="label">HVAC Installation</div>
+      <div class="sub">New system setup</div>
+    </div>
+    <div class="grid-box">
+      <div class="icon">🔍</div>
+      <div class="label">Maintenance</div>
+      <div class="sub">Tune-up & checkup</div>
+    </div>
+    <div class="grid-box">
+      <div class="icon">💨</div>
+      <div class="label">Air Quality</div>
+      <div class="sub">Filter & duct clean</div>
+    </div>
+    <div class="grid-box">
+      <div class="icon">🆘</div>
+      <div class="label">Emergency Service</div>
+      <div class="sub">24/7 available</div>
+    </div>
+  </div>
+  <a href="tel:1-800-XXX-XXXX" class="btn-blue">📞 Get Free Diagnosis Now</a>
+  <p class="btn-sub">No obligation — free diagnosis, upfront pricing</p>
+</div>
+
+<!-- URGENT BANNER -->
+<div class="urgent">
+  <h2>🌡️ It's Hot Out There!</h2>
+  <p>AC units are failing across the US this summer. Don't wait — spots fill up fast!</p>
+  <a href="tel:1-800-XXX-XXXX" class="btn-cta">📞 Call Now Before It Gets Worse</a>
+</div>
+
+<!-- HOW IT WORKS -->
+<div class="howitworks">
+  <h2>How it works</h2>
+  <div class="step-item">
+    <div class="step-num">1</div>
+    <div class="step-text">
+      <h3>Call us now</h3>
+      <p>Speak to a local HVAC specialist in under 2 minutes — available 24/7</p>
+    </div>
+  </div>
+  <div class="step-item">
+    <div class="step-num">2</div>
+    <div class="step-text">
+      <h3>Get a free diagnosis</h3>
+      <p>A licensed tech comes to your home and diagnoses the issue at no cost</p>
+    </div>
+  </div>
+  <div class="step-item">
+    <div class="step-num">3</div>
+    <div class="step-text">
+      <h3>Get it fixed today</h3>
+      <p>Approve the upfront quote and we fix it — most jobs done same day</p>
+    </div>
+  </div>
+</div>
+
+<!-- TESTIMONIALS -->
+<div class="testimonials">
+  <h2>What homeowners say</h2>
+  <div class="testi-card">
+    <div class="stars">★★★★★</div>
+    <p>"My AC stopped working at 9 PM on a Friday. Called this number and had a tech at my door by 11 PM. Fixed by midnight!"</p>
+    <span>— Robert T., Dallas TX</span>
+  </div>
+  <div class="testi-card">
+    <div class="stars">★★★★★</div>
+    <p>"Free diagnosis saved me from being ripped off. They found a simple fix that cost me $85 instead of the $800 another company quoted."</p>
+    <span>— Maria L., Phoenix AZ</span>
+  </div>
+  <div class="testi-card">
+    <div class="stars">★★★★★</div>
+    <p>"Called at 8 AM, tech arrived by noon, AC running perfectly by 2 PM. Professional, fast, and honest pricing."</p>
+    <span>— James K., Houston TX</span>
+  </div>
+</div>
+
+<!-- FAQ -->
+<div class="faq">
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq-item">
+    <h3>Is the diagnosis really free?</h3>
+    <p>Yes! Our licensed technicians will diagnose your HVAC problem at absolutely no cost. You only pay if you approve the repair.</p>
+  </div>
+  <div class="faq-item">
+    <h3>How fast can a tech arrive?</h3>
+    <p>In most areas, we can have a licensed technician at your door within 2-4 hours. Same day service is available in most cities.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Do you service all AC brands?</h3>
+    <p>Yes! We service all major brands including Carrier, Trane, Lennox, Rheem, York, Goodman, and more.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Are your technicians licensed?</h3>
+    <p>All technicians in our network are fully licensed, insured, and background-checked for your safety and peace of mind.</p>
+  </div>
+</div>
+
+<!-- FINAL CTA -->
+<div class="final-cta">
+  <h2>Don't Suffer in the Heat!</h2>
+  <p>Call now and get a FREE diagnosis from a local HVAC expert today</p>
+  <a href="tel:1-800-XXX-XXXX" class="btn-cta">📞 1-800-XXX-XXXX</a>
+  <p class="hours">Available 24/7 · Free diagnosis · No obligation</p>
+</div>
+
+<!-- DISCLAIMER -->
+<div class="disclaimer">
+  <p><strong>Disclaimer:</strong> This is an independent home services marketplace and is not affiliated with any government entity or specific HVAC contractor. By calling the number above, you will be connected with a licensed, independent HVAC contractor in your area. Service availability, pricing, and response times vary by location and contractor. Free diagnosis is subject to service area availability. This site does not guarantee specific pricing or repair timelines.</p>
+</div>
+
+<!-- STICKY CALL BUTTON -->
+<div class="sticky-btn">
+  <a href="tel:1-800-XXX-XXXX">📞 Call Now: 1-800-XXX-XXXX — FREE Diagnosis</a>
+</div>
+
+</body>
+</html>
